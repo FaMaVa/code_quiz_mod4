@@ -1,0 +1,43 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    display: flex; 
+    justify-content: space-between;
+}
+
+button {
+    display: block;
+    font-size: 22px;
+    font-weight:normal;
+    color: white;
+    padding: 10px 25px;
+    background-color: rgb(70, 13, 139);
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color:blueviolet;
+}
+
+textarea {
+    display: inline;
+}
+
+.heading {
+    padding: 0 15px;
+}
+
+.wrong, 
+.correct {
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 260px;
+    text-align: left;
+}
+
+#viewscore {
+    color: blueviolet;
+}
