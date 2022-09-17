@@ -3,7 +3,6 @@ var incorrect = 0
 var timeEl = document.getElementById("timer");
 var start = document.getElementById("start");
 var end = document.getElementById("finish");
-var leaderBoard = document.getElementById("highscores");
 var result = document.getElementById("result");
 var startBtn = document.getElementById("startbtn");
 var multQuiz = document.getElementById("quiz");
@@ -14,13 +13,11 @@ var thirdBtn = document.getElementById("threebtn");
 var fourthBtn = document.getElementById("fourbtn");
 var finalScore = document.getElementById("finalscore");
 var done = false; 
-var scoreInput = document.querySelector("initials");
-var scoreForm = document.querySelector("submit");
-var scoreList = document.querySelector("scorelist");
-var submitBtn = document.querySelector("submitbtn");
-var clearBtn = document.querySelector("clearbtn");
-var goBackBtn = document.querySelector("gobackbtn");
 var scores = []
+
+
+startBtn.addEventListener("click", setTime);
+startBtn.addEventListener("click", quiz);
 
 var secondsLeft = 60;
 
@@ -34,59 +31,21 @@ function setTime() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
-      // sendMessage();
+      sendMessage();
     };
 
   }, 1000);
 };
 
-var highScore = function () {
-  end.setAttribute("style", "display: none");
-  leaderBoard.setAttribute("style", "display");
-}
-
-function renderScores () {
-  var storedscores = JSON.parse(localStorage.getItem("scores"));
-  if (storedscores !== null) {
-    scores = storedscores;
-  };
-  scoreList.innerHTML = "";
-  for (var i = 0; i < scores.length; i++) {
-    var score = scores[i];
-    var li = document.createElement("li");
-    li.textContent = score + " - " + secondsleft;
-    li.setAttribute = ("data-index", i);
-    scoreList.appendChild(li);
-  };
-};
-
-function init () {
-  renderScores ();
-  done = false;
-};
-
-function storeScores () {
-  var scoreText = scoreInput.value.trim();
-  if (scoreText == "") {
-    return;
-  }
-  scores.push(scoreText);
-
-  localStorage.setItem("scores", JSON.stringify(scores));
-};
-
-var submitScore = function () {
-  storeScores ();
-  renderScores ();
-;}
 
 var finish = function () {
   multQuiz.setAttribute("style", "display: none");
   end.setAttribute("style", "display");
-  
 };
 
+
 function quiz() {
+
   var qFive = function () {
     question.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
     firstBtn.textContent = "1. JavaScript";
@@ -232,11 +191,48 @@ function quiz() {
 
 };
 
-startBtn.addEventListener("click", setTime);
-startBtn.addEventListener("click", quiz);
-goBackBtn.addEventListener("click", init);
-clearBtn.addEventListener("click", localStorage.clear);
-submitBtn.addEventListener ("click", submitScore);
-submitBtn.addEventListener ("click", highScore);
+
+var scoreInput = document.querySelector("#initials");
+var scoreForm = document.querySelector("#submit");
+var scoreList = document.querySelector("#scorelist");
+var submitBtn = document.querySelector("#submitbtn");
+var scores = [];
+
+function renderScores () {
+  var storedscores = JSON.parse(localStorage.getItem("scores"));
+  if (storedscores !== null) {
+    scores = storedscores;
+  };
+  scoreList.innerHTML = "";
+  for (var i = 0; i < scores.length; i++) {
+    var score = scores[i];
+    var li = document.createElement("li");
+    li.textContent = score;
+    li.setAttribute = ("data-index", i);
+    scoreList.appendChild(li);
+  };
+};
+
+function init () {
+  renderScores ();
+  done = false;
+};
+
+function storeScores () {
+  var scoreText = scoreInput.value.trim();
+  if (scoreText == "") {
+    return;
+  }
+  scores.push(scoreText);
+
+  localStorage.setItem("scores", JSON.stringify(scores));
+};
+
+submitBtn.addEventListener ("click", button);
+
+function button () {
+  storeScores ();
+  renderScores ();
+;}
 
 init ();
