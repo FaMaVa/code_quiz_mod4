@@ -7,12 +7,28 @@ header {
     justify-content: space-between;
 }
 
+p {
+    font-size: 25px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+h2 {
+    font-weight: lighter;
+    font-size: 30px;
+}
+
 button {
     display: block;
-    font-size: 22px;
-    font-weight:normal;
+    font-size: 25px;
+    font-weight:lighter;
     color: white;
-    padding: 10px 25px;
+    padding: 15px 25px;
     background-color: rgb(70, 13, 139);
     border: none;
     border-radius: 10px;
@@ -22,22 +38,101 @@ button:hover {
     background-color:blueviolet;
 }
 
+
 textarea {
-    display: inline;
+    font-size: 30px;
+    height: 32px;
+    position: relative;
+    top: 10px;
+    font-weight: lighter;
 }
 
-.heading {
-    padding: 0 15px;
+li {
+    background-color:rgb(214, 204, 225);
+
 }
 
-.wrong, 
-.correct {
-    padding: 10px 15px;
-    margin: 10px 0;
+#scorelist {
+    font-size: 30px;
+    height: 32px;
+    font-weight: lighter;
+}
+
+#onebtn,
+#twobtn,
+#threebtn,
+#fourbtn {
+    padding: 15px 15px;
+    margin: 5px 0;
     width: 260px;
     text-align: left;
 }
 
+
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 75px 175px;
+}
+
+#startcontainer {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+#submitbtn {
+    display: inline;
+    padding: 5px 25px;
+}
+
+#highscoresbtns {
+    display: flex;
+    flex-direction: row; 
+}
+
+#gobackbtn {
+    padding: 10px 15px;
+    margin: 5px;
+    width: 130px;
+    text-align: center;
+}
+#clearbtn {
+    padding: 10px 15px;
+    margin: 5px;
+    width: 230px;
+    text-align: center;
+}
+
 #viewscore {
     color: blueviolet;
+}
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 75px 400px;
+}
+
+#result {
+    color: grey;
+    border-top-style: solid;
+    font-style: italic;
+    padding: 10px;
+}
+
+#finish,
+#highscores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0 0 400px;
+}
+
+#finalscore,
+#submit {
+    margin: 5px;
 }

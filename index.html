@@ -2,68 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Code Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code Quiz</title>
 </head>
 
 <body>
     <header>
         <p class="heading" id="viewscore">View High Scores</p>
-        <p class="heading" >Time:</p>
+        <p class="heading" id="timer">Time: </p>
     </header>
     <div id="start">
         <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind incorrects answers will penalize your score/time by ten seconds!</p>
-        <button>Start Quiz</button>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind incorrects answers
+            will penalize your score/time by ten seconds!</p>
+        <div id="startcontainer">
+            <button id="startbtn">Start Quiz</button>
+        </div>
     </div>
-    <div id="Q1">
-        <h1>Commonly used data types DO not include:</h1>
-        <button class="wrong">1. strings</button>
-        <button class="wrong">2. booleans</button>
-        <button class="correct">3. alerts</button>
-        <button class="wrong">4. numbers</button>
+    <div style="display:none" id="quiz">
+        <h1 id="question"></h1>
+        <button id="onebtn">1. strings</button>
+        <button id="twobtn">2. booleans</button>
+        <button id="threebtn">3. alerts</button>
+        <button id="fourbtn">4. numbers</button>
+        <h2 id="result"></h2>
     </div>
-    <div id="Q2">
-        <h1>The condition in an if / else statement is enclosed with _______.</h1>
-        <button class="wrong">1. quotes</button>
-        <button class="wrong">2. curly brackets</button>
-        <button class="correct">3. parenthesis</button>
-        <button class="wrong">4. square brackets</button>
-    </div>
-    <div id="Q3">
-        <h1>Arrays in JavaScript can be used to store _______.</h1>
-        <button class="wrong">1. numbers and strings</button>
-        <button class="wrong">2. other arrays</button>
-        <button class="wrong">3. booleans</button>
-        <button class="correct">4. all of the above</button>
-    </div>
-    <div id="Q4">
-        <h1>String values must be enclosed within _______ when being assigned to variables.</h1>
-        <button class="wrong">1. commas</button>
-        <button class="wrong">2. curly brackets</button>
-        <button class="correct">3. quotes</button>
-        <button class="wrong">4. parenthesis</button>
-    </div>
-    <div id="Q5">
-        <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
-        <button class="wrong">1. JavaScript</button>
-        <button class="wrong">2. terminal/bash</button>
-        <button class="wrong">3. for loops</button>
-        <button class="correct">4. console.log</button>
-    </div>
-    <div id="finish">
+    <div  style="display:none" id="finish">
         <h1>All done!</h1>
-        <h2>Your final score is </h2>
-        <h2>Enter initials:
-            <textarea name="initials"></textarea>
-            <button id="submit" >Submit</button>
+        <h2 id="finalscore">hi</h2>
+        <h2 id="submit">Enter initials:
+            <textarea name="initials" id="initials"></textarea>
+            <button id="submitbtn">Submit</button>
         </h2>
     </div>
-    <footer>
-        <h2>Answer</h2>
-    </footer>
+    <div  style="display:none" id="highscores">
+        <h1>High scores</h1>
+        <ol id="scorelist"></ol>
+        <div id="highscoresbtns">
+            <button id="gobackbtn">Go back</button>
+            <button id="clearbtn">Clear high scores</button>
+        </div>
+    </div>
+
 
     <script src="./assets/js/script.js"></script>
 </body>
+
+</html>
