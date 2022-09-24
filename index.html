@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <p class="heading" id="viewscore">View High Scores</p>
+        <a href="#highscores" class="heading" id="viewscore">View High Scores</a>
         <p class="heading" id="timer">Time: </p>
     </header>
     <div id="start">
@@ -29,21 +29,31 @@
         <button id="fourbtn">4. numbers</button>
         <h2 id="result"></h2>
     </div>
-    <div  style="display:none" id="finish">
+    <div style="display:none" id="finish">
         <h1>All done!</h1>
-        <h2 id="finalscore">hi</h2>
+        <h2 id="finalscore"></h2>
         <h2 id="submit">Enter initials:
-            <textarea name="initials" id="initials"></textarea>
-            <button id="submitbtn">Submit</button>
+            <form>
+                <textarea name="initials" id="initials"></textarea>
+                <button id="submitbtn">Submit</button>
+            </form>
         </h2>
     </div>
-    <div  style="display:none" id="highscores">
+    <div style="display:none" id="highscores">
         <h1>High scores</h1>
         <ol id="scorelist"></ol>
-        <div id="highscoresbtns">
-            <button id="gobackbtn">Go back</button>
-            <button id="clearbtn">Clear high scores</button>
+        <div>
+            <form id="highscoresbtns">
+                <button id="gobackbtn">Go back</button>
+                <button id="clearbtn">Clear high scores</button>
+            </form>
         </div>
+    </div>
+    <div style="display:none" id="lost">
+        <h1>Ran out of time!</h1>
+        <form id="lostcontainer">
+            <button id="gobackbtn2">Go back</button>
+        </form>
     </div>
 
 
