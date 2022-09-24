@@ -57,6 +57,7 @@ textarea {
     height: 32px;
     font-weight: lighter;
     background-color:rgb(214, 204, 225);
+    max-width: 500px;
 }
 
 #onebtn,

@@ -20,7 +20,7 @@ var gotbackBtn = document.getElementById("gobackbtn");
 var gotbackBtn2 = document.getElementById("gobackbtn2");
 
 //Creating Variables
-var secondsLeft = 0;
+var secondsLeft = 60;
 var done = false; 
 
 //Event Listeners for buttons
@@ -29,14 +29,12 @@ submitBtn.addEventListener ("click", storeScore);
 
 gotbackBtn.addEventListener ("click", function (event) {
   event.preventDefault();
-  board.setAttribute("style", "display: none");
-  start.setAttribute("style", "display");
+  window.location.reload();
 });
 
 gotbackBtn2.addEventListener ("click", function (event) {
   event.preventDefault();
-  lost.setAttribute("style", "display: none");
-  start.setAttribute("style", "display");
+  window.location.reload();
 });
 
 clearBtn.addEventListener ("click", function (event) {
@@ -53,12 +51,13 @@ document.addEventListener("click", function(event) {
     multQuiz.setAttribute("style", "display: none");
     enterInitials.setAttribute("style", "display: none");
     board.setAttribute("style", "display");
+    renderScore ();
+    clearInterval(timerInterval);
   }
 });
 
 // Quiz Timer
 function setTime() {
-  secondsLeft = 60
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = "Time: " + secondsLeft;
